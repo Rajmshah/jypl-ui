@@ -7,7 +7,12 @@
           <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12 m-auto">
             <div class="card p-5">
               <div class="logo">
-                <img src="@/assets/mtc-logo.png" width="100" height="auto" alt="mtc-logo" />
+                <img
+                  src="@/assets/mtc-logo.png"
+                  width="100"
+                  height="auto"
+                  alt="jypl-logo"
+                />
               </div>
               <div class="my-5">
                 <form name="loginForm" @submit="submitForm">
@@ -18,7 +23,11 @@
                     label="Username:"
                     label-for="username"
                   >
-                    <b-form-input v-model="form.username" id="username" required></b-form-input>
+                    <b-form-input
+                      v-model="form.username"
+                      id="username"
+                      required
+                    ></b-form-input>
                   </b-form-group>
                   <b-form-group
                     id="fieldset-horizontal"
@@ -27,18 +36,23 @@
                     label="Password:"
                     label-for="password"
                   >
-                    <b-form-input type="password" v-model="form.password" id="password" required></b-form-input>
+                    <b-form-input
+                      type="password"
+                      v-model="form.password"
+                      id="password"
+                      required
+                    ></b-form-input>
                   </b-form-group>
                   <div v-if="checkError">{{ message }}</div>
-                  <b-button class="mt-3" type="submit" variant="success">Sign In</b-button>
+                  <b-button class="mt-3" type="submit" variant="success"
+                    >Sign In</b-button
+                  >
                 </form>
               </div>
               <div class>
                 In case you have forgotten the password or you have trouble
                 logging please contact:
-                <a
-                  href="tel:09619711447"
-                >9619711447</a>
+                <a href="tel:09619711447">9619711447</a>
               </div>
             </div>
           </div>

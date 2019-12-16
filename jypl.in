@@ -1,8 +1,8 @@
 server {
        listen 80;
-       server_name mtcmarudharcup.com www.mtcmarudharcup.com;
+       server_name jypl.in www.jypl.in;
        location / {
-               root /home/projects/mtc-ui/dist;
+               root /home/projects/jypl-ui/dist;
                index index.html index.htm;
                try_files $uri $uri/ /index.html =404;
        }

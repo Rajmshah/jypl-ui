@@ -2,7 +2,7 @@
   <div class="header">
     <nav class="navbar navbar-expand-md navbar-light bg-color">
       <router-link class="navbar-brand p-0 pointer" to="/">
-        <img src="../assets/mtc-logo.png" alt="logo" width="75" />
+        <img src="../assets/mtc-logo.png" alt="jypl-logo" width="75" />
       </router-link>
       <button
         class="navbar-toggler"
@@ -27,14 +27,18 @@
               <router-link v-if="menu.link" :to="menu.link" class="nav-link text-uppercase">
                 <!-- ui-sref="{{ menu.link }}" -->
                 {{ menu.name }}
-                <span v-if="menu.subnav.length>0">
+                <span v-if="menu.subnav.length > 0">
                   <i class="fa fa-caret-down"></i>
                 </span>
               </router-link>
-              <div class="dropdown-menu" v-if="menu.subnav.length>0">
+              <div class="dropdown-menu" v-if="menu.subnav.length > 0">
                 <div v-for="submenu in menu.subnav" :key="submenu.name" ui-sref-active="active">
                   <!-- :ui-sref="{{ submenu.stateName }}({'id':submenu.id})" -->
-                  <router-link v-if="submenu.stateName" class="dropdown-item">{{ submenu.name }}</router-link>
+                  <router-link v-if="submenu.stateName" class="dropdown-item">
+                    {{
+                    submenu.name
+                    }}
+                  </router-link>
                   <!--<a herf="{{submenu.link}}" v-if="submenu.link" class="dropdown-item">{{submenu.name}}</a>-->
                 </div>
               </div>
