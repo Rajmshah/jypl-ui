@@ -200,6 +200,26 @@ export default {
       .catch(err => {
         callback(err);
       }),
+  //Player List
+  searchPlayerList: (data, callback) =>
+    axios
+      .get(`${adminUrl}PlayerList/`, { params: data })
+      .then(responseData => {
+        callback(responseData);
+      })
+      .catch(err => {
+        callback(err);
+      }),
+  //Team List
+  searchTeamList: (data, callback) =>
+    axios
+      .get(`${adminUrl}TeamList/`, { params: data })
+      .then(responseData => {
+        callback(responseData);
+      })
+      .catch(err => {
+        callback(err);
+      }),
   //Image Upload
   upload: function(formData, callback) {
     axios

@@ -28,29 +28,29 @@
     }
   }
 }
-.mx-input {
-  background-color: transparent !important;
-  border: 1px solid black !important;
-}
+// .mx-input {
+//   background-color: transparent !important;
+//   border: 1px solid black !important;
+// }
 
 .v-select {
   position: relative;
   font-family: inherit;
-  width: 50%;
+  width: 100%;
   border: 1px solid black;
   border-radius: 5px;
 }
-.multiselect__tags {
-  border: 1px solid black !important;
-  border-radius: 5px;
-  background-color: transparent !important;
-}
-.multiselect__input {
-  background-color: transparent !important;
-}
-.multiselect__placeholder {
-  color: black !important;
-}
+// .multiselect__tags {
+//   border: 1px solid black !important;
+//   border-radius: 5px;
+//   background-color: transparent !important;
+// }
+// .multiselect__input {
+//   background-color: transparent !important;
+// }
+// .multiselect__placeholder {
+//   color: black !important;
+// }
 @font-face {
   font-family: "Opensans Semibold";
   src: url("~@/fonts/Open_Sans/OpenSans-SemiBold.ttf");

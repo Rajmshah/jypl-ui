@@ -1,19 +1,14 @@
 <template>
-  <div class="footer-scss footer-css pt-5 pb-3 titillium-web-semiBold">
+  <!-- pt-5  -->
+  <div class="footer-scss footer-css py-2 titillium-web-semiBold">
     <div class="container">
       <div class="row justify-content-center align-items-center mb-5" hidden>
         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <div class="text-uppercase subscribe-head">
-            Subscribe to our newsletter
-          </div>
+          <div class="text-uppercase subscribe-head">Subscribe to our newsletter</div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-12">
           <div class>
-            <form
-              name="subscriptionForm"
-              role="form"
-              ng-submit="saveSubscription(subscribe)"
-            >
+            <form name="subscriptionForm" role="form" ng-submit="saveSubscription(subscribe)">
               <div class="input-group">
                 <input
                   type="email"
@@ -44,7 +39,7 @@
         </div>-->
       </div>
 
-      <div class="row mb-4">
+      <div class="row mb-4" hidden>
         <div class="col-lg-6 col-md-6 col-sm-6 col-12">
           <div class="footerLists social-list">
             <div>Social Handles</div>
@@ -94,9 +89,7 @@
               <li class="list-inline-item right-section">
                 <ul class="list-unstyled text-left">
                   <li>
-                    <router-link to="/past-championship"
-                      >Past Championship</router-link
-                    >
+                    <router-link to="/past-championship">Past Championship</router-link>
                   </li>
                   <li>
                     <router-link to="/sponsor">Sponsor</router-link>
@@ -115,10 +108,7 @@
           <div class="footerMain text-center">
             <div class="footerLists">
               <!-- <i class="far fa-copyright"></i> -->
-              <font-awesome-icon
-                :icon="['far', 'copyright']"
-                class="mr-1"
-              />2019 Copyright :
+              <font-awesome-icon :icon="['far', 'copyright']" class="mr-1" />2019 Copyright :
               <router-link to="/">jypl.in</router-link>
               <!-- <span class="listSeparator">|</span> -->
             </div>
@@ -139,9 +129,10 @@ export default {};
 <style lang="scss">
 @import "src/assets/scss/main.scss";
 .footer-scss {
-  background-color: $header-footer;
+  background-color: rgba(34, 66, 128, 0.24);
+  // background-color: #234280;
   font-size: $font-size-sm;
-  color: $white;
+  color: $black;
 }
 
 .footer-css {
@@ -198,10 +189,10 @@ export default {};
 
 .footerLists {
   a {
-    color: $white;
+    color: $black;
     text-decoration: none;
     &:hover {
-      color: $header-footer-hover;
+      color: $black;
       text-decoration: none;
       border-bottom: 2px solid rgba(229, 193, 0, 0.29);
     }

@@ -1,8 +1,11 @@
 <template>
   <div class="header">
-    <nav class="navbar navbar-expand-md navbar-light bg-color">
+    <nav class="navbar navbar-expand-md navbar-light bg-header">
       <router-link class="navbar-brand p-0 pointer" to="/">
-        <img src="../assets/mtc-logo.png" alt="jypl-logo" width="75" />
+        <img src="../assets/jyf-logo.png" alt="jyf-logo" width="75" />
+      </router-link>
+      <router-link class="navbar-brand p-0 pointer" to="/">
+        <img src="../assets/jypl-logo.png" alt="jypl-logo" width="75" />
       </router-link>
       <button
         class="navbar-toggler"
@@ -55,48 +58,48 @@ export default {
   data() {
     return {
       headerMenu: [
-        {
-          name: "Home",
-          classis: "active",
-          link: "/",
-          subnav: []
-        },
-        {
-          name: "About us",
-          classis: "active",
-          link: "/about-us",
-          subnav: []
-        },
-        {
-          name: "Gallery",
-          classis: "active",
-          link: "/gallery",
-          subnav: []
-        },
-        {
-          name: "Past Championship",
-          classis: "active",
-          link: "/past-championship",
-          subnav: []
-        },
-        {
-          name: "Sponsor",
-          classis: "active",
-          link: "/sponsor",
-          subnav: []
-        },
-        {
-          name: "Contact us",
-          classis: "active",
-          link: "/contact-us",
-          subnav: []
-        },
-        {
-          name: "Login",
-          classis: "active",
-          link: "/login",
-          subnav: []
-        }
+        // {
+        //   name: "Home",
+        //   classis: "active",
+        //   link: "/",
+        //   subnav: []
+        // },
+        // {
+        //   name: "About us",
+        //   classis: "active",
+        //   link: "/about-us",
+        //   subnav: []
+        // },
+        // {
+        //   name: "Gallery",
+        //   classis: "active",
+        //   link: "/gallery",
+        //   subnav: []
+        // },
+        // {
+        //   name: "Past Championship",
+        //   classis: "active",
+        //   link: "/past-championship",
+        //   subnav: []
+        // },
+        // {
+        //   name: "Sponsor",
+        //   classis: "active",
+        //   link: "/sponsor",
+        //   subnav: []
+        // },
+        // {
+        //   name: "Contact us",
+        //   classis: "active",
+        //   link: "/contact-us",
+        //   subnav: []
+        // },
+        // {
+        //   name: "Login",
+        //   classis: "active",
+        //   link: "/login",
+        //   subnav: []
+        // }
       ]
     };
   }
@@ -112,6 +115,9 @@ export default {
   z-index: 99;
   .navbar {
     padding: 0 2rem;
+  }
+  .bg-header {
+    background-color: rgba(34, 66, 128, 0.24);
   }
   .navbar-light .navbar-nav {
     .nav-item {
