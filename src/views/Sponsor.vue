@@ -227,7 +227,7 @@ export default {
       // sponsorBigList: [
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Rajnikant",
       //     sponsorType: "Comic",
@@ -235,7 +235,7 @@ export default {
       //   },
       //   {
       //     active: false,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Rajnikant 1",
       //     sponsorType: "Comic",
@@ -243,7 +243,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan",
       //     sponsorType: "Comic",
@@ -251,7 +251,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan 4",
       //     sponsorType: "Comic",
@@ -259,7 +259,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan 5",
       //     sponsorType: "Comic",
@@ -269,7 +269,7 @@ export default {
       // sponsorMediumList: [
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Rajnikant",
       //     sponsorType: "Comic",
@@ -277,7 +277,7 @@ export default {
       //   },
       //   {
       //     active: false,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Rajnikant 1",
       //     sponsorType: "Comic",
@@ -285,7 +285,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan",
       //     sponsorType: "Comic",
@@ -293,7 +293,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan 4",
       //     sponsorType: "Comic",
@@ -301,7 +301,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan 5",
       //     sponsorType: "Comic",
@@ -311,7 +311,7 @@ export default {
       // sponsorSmallList: [
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Rajnikant",
       //     sponsorType: "Comic",
@@ -319,7 +319,7 @@ export default {
       //   },
       //   {
       //     active: false,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Rajnikant 1",
       //     sponsorType: "Comic",
@@ -327,7 +327,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan",
       //     sponsorType: "Comic",
@@ -335,7 +335,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan 4",
       //     sponsorType: "Comic",
@@ -343,7 +343,7 @@ export default {
       //   },
       //   {
       //     active: true,
-      //     logo: "../assets/mtc-logo.png",
+      //     logo: "../assets/jypl-logo.png",
       //     name: "Man of the series",
       //     ownerName: "Salman Khan 5",
       //     sponsorType: "Comic",

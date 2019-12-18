@@ -8,7 +8,7 @@
             <div class="card p-5">
               <div class="logo">
                 <img
-                  src="@/assets/mtc-logo.png"
+                  src="@/assets/jypl-logo.png"
                   width="100"
                   height="auto"
                   alt="jypl-logo"
