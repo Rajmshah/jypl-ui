@@ -6,10 +6,19 @@
         <b-form name="formShow" @submit="onSelectedPlayer">
           <!-- 3rd section Other Details -->
           <div class="card inception">
-             <div class="tab-heading inception main-head">
+            <div class="tab-heading inception main-head">
               <h3 class="text">Player Registration</h3>
             </div>
-            <div class="text-left main-form-section my-3 mx-5">
+            <div
+              class="text-center main-form-section my-3 mx-5"
+              v-if="showMessage"
+            >
+              {{ message }}
+            </div>
+            <div
+              class="text-left main-form-section my-3 mx-5"
+              v-if="!showMessage"
+            >
               <!-- Team -->
               <b-form-group label="Select Player:" label-for="player">
                 <multiselect
@@ -30,7 +39,7 @@
                 </div>
               </b-form-group>
             </div>
-            <div class="mb-5 text-center">
+            <div class="mb-5 text-center" v-if="!showMessage">
               <b-button type="submit" variant="primary">Go</b-button>
             </div>
           </div>
@@ -732,13 +741,27 @@
               <b-form-group
                 label="Please consult our Privacy Policy , which includes important information."
               >
-                <b-form-checkbox-group
+                <!-- <b-form-checkbox-group
                   placeholder="Enter First Name"
                   class="font-size-sm m-4"
                   v-model="form.condition"
                   :options="conditionOptions"
                   stacked
-                ></b-form-checkbox-group>
+                ></b-form-checkbox-group> -->
+                <b-form-checkbox
+                  v-for="option in conditionOptions"
+                  :key="option.value"
+                  :value="[option.value]"
+                  v-model="form.condition"
+                  class="font-size-sm my-4 d-inline"
+                  name="flavour-4a"
+                >
+                  {{ option.text }}
+                </b-form-checkbox>
+                <span v-b-modal.tnc class="pointer">
+                  Terms and Conditions.
+                </span>
+                <tncView></tncView>
               </b-form-group>
             </div>
           </div>
@@ -760,6 +783,7 @@
 <script>
 // @ is an alias to /src
 import { required } from "vuelidate/lib/validators";
+import tncView from "@/views/modal/tnc.vue";
 import DatePicker from "vue2-datepicker";
 import { Multiselect } from "vue-multiselect";
 import { VueTelInput } from "vue-tel-input";
@@ -774,21 +798,12 @@ export default {
     Multiselect,
     VueTelInput,
     headerSection,
-    footerSection
+    footerSection,
+    tncView
   },
   data() {
     return {
       name: "",
-      options: [
-        { name: "thane", code: "vu" },
-        { name: "kanjur", code: "45" },
-        { name: "bhandup", code: "55" },
-        { name: "nahur", code: "53" },
-        { name: "mulund", code: "12" },
-        { name: "badlapur", code: "12" },
-        { name: "diva", code: "22" }
-      ],
-      //
       show: true,
       showForm: false,
       showError: false,
@@ -813,12 +828,9 @@ export default {
 
       conditionOptions: [
         {
-          text: "I am informed of each of the sections of the privacy policy.",
-          value: "one"
-        },
-        {
-          text: "I have read and accept the Terms and Conditions.",
-          value: "two"
+          text: "I have read and accept the ",
+          value: "two",
+          showModal: true
         }
       ],
 
@@ -848,9 +860,17 @@ export default {
       ],
 
       trackOptions: [
+        { value: "37", text: "37" },
         { value: "38", text: "38" },
+        { value: "39", text: "39" },
         { value: "40", text: "40" },
-        { value: "42", text: "42" }
+        { value: "41", text: "41" },
+        { value: "42", text: "42" },
+        { value: "43", text: "43" },
+        { value: "44", text: "44" },
+        { value: "45", text: "45" },
+        { value: "46", text: "46" },
+        { value: "47", text: "47" }
       ],
 
       trouserOptions: [
@@ -861,18 +881,25 @@ export default {
         { value: "34", text: "34" },
         { value: "36", text: "36" },
         { value: "38", text: "38" },
-        { value: "40", text: "40" }
+        { value: "40", text: "40" },
+        { value: "42", text: "42" },
+        { value: "44", text: "44" }
       ],
 
       shirtOptions: [
+        { value: "30", text: "30" },
+        { value: "32", text: "32" },
+        { value: "34", text: "34" },
         { value: "36", text: "36" },
         { value: "38", text: "38" },
         { value: "40", text: "40" },
         { value: "42", text: "42" },
-        { value: "43", text: "43" },
-        { value: "46", text: "46" }
+        { value: "44", text: "44" },
+        { value: "46", text: "46" },
+        { value: "48", text: "48" }
       ],
-
+      showMessage: false,
+      message: "",
       form: {
         firstName: "",
         middleName: "",
@@ -901,6 +928,8 @@ export default {
         isWicketkeeper: false,
         beOwner: false,
         beSponsor: false,
+        paymentStatus: "Pending",
+        paymentMethod: "Online",
         shirtSize: "",
         trouserSize: "",
         trackLength: "",
@@ -946,14 +975,6 @@ export default {
             this.time3 = [new Date(), new Date()];
           }
         }
-      ],
-
-      foods: [
-        { text: "Select One", value: null },
-        "Carrots",
-        "Beans",
-        "Tomatoes",
-        "Corn"
       ]
     };
   },
@@ -1036,10 +1057,27 @@ export default {
     }
   },
   created() {
-    this.getPlayerList();
-    this.getTeamList();
+    this.getSettings();
   },
   methods: {
+    getSettings() {
+      service.searchSettings({}, setting => {
+        if (setting.data.length > 0) {
+          if (setting.data[0].message) {
+            this.showMessage = true;
+            this.message = setting.data[0].message;
+          } else {
+            this.showMessage = false;
+            this.getPlayerList();
+            this.getTeamList();
+          }
+        } else {
+          this.showMessage = false;
+          this.getPlayerList();
+          this.getTeamList();
+        }
+      });
+    },
     getPlayerList() {
       service.searchPlayerList(this.search, playerList => {
         this.playerOptions = playerList.data.result;
@@ -1068,14 +1106,16 @@ export default {
     },
     onSelectedPlayer(e) {
       e.preventDefault();
-      if (this.formShow.selectedPlayer == "" || this.formShow.selectedPlayer == null || this.formShow.selectedPlayer == undefined) {
+      if (
+        this.formShow.selectedPlayer == "" ||
+        this.formShow.selectedPlayer == null ||
+        this.formShow.selectedPlayer == undefined
+      ) {
         this.showError = true;
       } else {
         this.showError = false;
         this.showForm = true;
         this.form = _.cloneDeep(this.formShow.selectedPlayer);
-        delete this.form.paymentMethod;
-        delete this.form.paymentStatus;
         delete this.form.invoiceId;
         delete this.form.playerId;
         delete this.form._id;
@@ -1084,6 +1124,8 @@ export default {
         delete this.form.createdAt;
         delete this.form.fullName;
         delete this.form.registrationDate;
+        this.form.paymentStatus = "Pending";
+        this.form.paymentMethod = "Online";
         if (this.formShow.selectedPlayer.company) {
           this.form.company = this.formShow.selectedPlayer.company;
         } else {
@@ -1101,14 +1143,6 @@ export default {
         this.form.hasPlayed = true;
       }
     },
-    addTag(newTag) {
-      const tag = {
-        name: newTag,
-        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000)
-      };
-      this.options.push(tag);
-      this.value.push(tag);
-    },
 
     ResetBtn() {
       this.removeText = false;
@@ -1117,7 +1151,7 @@ export default {
     onSubmit(e) {
       e.preventDefault();
       if (this.form.photograph && this.form.idProof && this.form.businessCard) {
-        if (this.form.condition && this.form.condition.length == 2) {
+        if (this.form.condition && this.form.condition.length == 1) {
           var obj = _.cloneDeep(this.form);
           if (obj.team) {
             obj.team = obj.team.name;
@@ -1131,16 +1165,51 @@ export default {
             return;
           } else {
             service.savePlayer(obj, result => {
-              if (result.data) {
+              if (result.data == "Player Already Exist") {
+                this.$toasted.error("Player Already Exist");
+              } else if (result.data) {
                 this.removeText = false;
                 this.showForm = false;
                 this.formShow = {
                   selectedPlayer: ""
                 };
+                this.form = {
+                  firstName: "",
+                  middleName: "",
+                  surname: "",
+                  email: "",
+                  dob: "",
+                  age: "",
+                  mobile: "",
+                  photograph: "",
+                  idProof: "",
+                  businessCard: "",
+                  team: "",
+                  address: "",
+                  company: {
+                    name: "",
+                    businessType: "",
+                    designation: "",
+                    relationship: "",
+                    address: ""
+                  },
+                  jerseyName: "",
+                  keyRole: "",
+                  hasPlayed: false,
+                  bowlingType: "",
+                  battingType: "",
+                  isWicketkeeper: false,
+                  beOwner: false,
+                  beSponsor: false,
+                  shirtSize: "",
+                  trouserSize: "",
+                  trackLength: "",
+                  condition: [],
+                  checked: []
+                };
                 this.$toasted.success("Player is added successfully");
-                this.$router.go(0);
               } else {
-                this.errMessage = "Retry adding the player.";
+                this.$toasted.error("Retry adding the player.");
               }
             });
           }
@@ -1192,6 +1261,8 @@ export default {
       this.form.shirtSize = "";
       this.form.trouserSize = "";
       this.form.trackLength = "";
+      this.form.paymentStatus = "Pending";
+      this.form.paymentMethod = "Online";
       this.form.bowlingType = "";
 
       // Trick to reset/clear native browser form validation state
@@ -1308,7 +1379,7 @@ export default {
 </script>
 <style lang="scss">
 @import "src/assets/scss/main.scss";
-.tab-heading.inception.main-head{
+.tab-heading.inception.main-head {
   color: #2c3e50;
   justify-content: center;
 }

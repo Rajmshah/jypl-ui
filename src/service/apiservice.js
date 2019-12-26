@@ -3,14 +3,14 @@ import Vue from "vue";
 import globalJs from "@/service/global.js";
 // Local
 
-// const adminUrl = "http://api.jypl.in/";
-const adminUrl = "http://localhost:3000/";
+const adminUrl = "http://api.jypl.in/";
+// const adminUrl = "http://localhost:3000/";
 
 export default {
-  uploadUrl: "http://localhost:1330/api/upload/",
-  readFileUrl: "http://localhost:1330/api/upload/readFile",
-  // uploadUrl: "http://fileupload.jypl.in/api/upload/",
-  // readFileUrl: "http://fileupload.jypl.in/api/upload/readFile",
+  // uploadUrl: "http://localhost:1330/api/upload/",
+  // readFileUrl: "http://localhost:1330/api/upload/readFile",
+  uploadUrl: "http://fileupload.jypl.in/api/upload/",
+  readFileUrl: "http://fileupload.jypl.in/api/upload/readFile",
   login: (data, callback) =>
     axios
       .post(`${adminUrl}User/login`, data)
@@ -154,6 +154,16 @@ export default {
   searchContact: (data, callback) =>
     axios
       .get(`${adminUrl}Contact/`, { params: data })
+      .then(responseData => {
+        callback(responseData);
+      })
+      .catch(err => {
+        callback(err);
+      }),
+  //Settings List
+  searchSettings: (data, callback) =>
+    axios
+      .get(`${adminUrl}Setting/`, { params: data })
       .then(responseData => {
         callback(responseData);
       })

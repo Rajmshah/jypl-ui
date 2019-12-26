@@ -33,23 +33,6 @@ Vue.filter("serverimage", function(input, width, height, style) {
   }
 });
 
-Vue.filter("youtubethumb", function() {
-  return function(input, onlyid, type) {
-    if (input) {
-      if (onlyid == false) {
-        if (type) {
-          return "https://img.youtube.com/vi/" + input + "/" + type + ".jpg";
-        } else {
-          return "https://img.youtube.com/vi/" + input + "/mqdefault.jpg";
-        }
-      } else if (onlyid == true) {
-        return videoid[1];
-      }
-    } else {
-      return input;
-    }
-  };
-});
 
 // TOASTED
 import Toasted from "vue-toasted";
@@ -71,20 +54,12 @@ import Multiselect from "vue-multiselect";
 Vue.component("vue-multiselect", Multiselect);
 import "vue-multiselect/dist/vue-multiselect.min.css";
 
-// vue-the-mask
-import VueTheMask from "vue-the-mask";
-Vue.use(VueTheMask);
-
 // vue-tel-input
 import VueTelInput from "vue-tel-input";
 Vue.use(VueTelInput);
 
 // vue momemt
 Vue.use(require("vue-moment"));
-// import VueMoment from 'vue-moment'
-// Vue.use(VueMoment, {
-//     moment,
-// })
 
 //vue lodash
 import VueLodash from "vue-lodash";
