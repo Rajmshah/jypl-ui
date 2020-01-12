@@ -775,6 +775,25 @@
           </div>
         </b-form>
       </div>
+      <b-modal
+        id="'paynow'"
+        ref="paynow-button"
+        title="Payment Process"
+        hide-footer
+        size="sm"
+        no-stacking
+        no-close-on-backdrop
+      >
+        <div class="m-auto">
+          <b-embed
+            type="iframe"
+            :src="
+              `https://storage.googleapis.com/jypl/paynow-button-small.html`
+            "
+            allowfullscreen
+          ></b-embed>
+        </div>
+      </b-modal>
     </div>
     <footerSection></footerSection>
   </div>
@@ -800,6 +819,7 @@ export default {
     headerSection,
     footerSection,
     tncView
+    // payment
   },
   data() {
     return {
@@ -1170,6 +1190,7 @@ export default {
               } else if (result.data) {
                 this.removeText = false;
                 this.showForm = false;
+
                 this.formShow = {
                   selectedPlayer: ""
                 };
@@ -1208,6 +1229,10 @@ export default {
                   checked: []
                 };
                 this.$toasted.success("Player is added successfully");
+                this.$bvModal._vm.$refs["paynow-button"].show("paynow");
+                setTimeout(() => {
+                  this.$router.go(0);
+                }, 15000);
               } else {
                 this.$toasted.error("Retry adding the player.");
               }
@@ -1222,8 +1247,6 @@ export default {
     },
 
     onReset() {
-      // evt.preventDefault();
-      // Reset our form values
       this.form.firstName = "";
       this.form.middleName = "";
       this.form.surname = "";
@@ -1276,7 +1299,6 @@ export default {
         moment(new Date()).format("YYYY") - moment(value).format("YYYY");
     },
     onClickProfileFile() {
-      console.log(this.$refs);
       this.$refs.fileInputProfile.click();
     },
     onFileProfilePicked() {
@@ -1501,5 +1523,26 @@ export default {
       text-shadow: 1rem 0 0.4rem $black;
     }
   }
+}
+.btn-outline-primary:focus,
+.btn-outline-primary.focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus,
+.btn-outline-danger:focus,
+.btn-outline-danger.focus,
+.btn-outline-danger:not(:disabled):not(.disabled):active:focus,
+.btn-outline-danger:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-danger.dropdown-toggle:focus {
+  box-shadow: unset;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-32%, -38%);
 }
 </style>
