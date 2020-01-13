@@ -30,7 +30,7 @@
                   placeholder="Search and Select a Player"
                   :custom-label="customLabel"
                   :value="name"
-                  class="w-50"
+                  class="w-50 w-inc"
                   track-by="_id"
                   @search-change="playerChange"
                 ></multiselect>
@@ -108,9 +108,9 @@
 
               <!-- email and mobile -->
               <b-form-group>
-                <div class="d-flex w-50">
+                <div class="d-flex w-50 w-inc">
                   <!-- email -->
-                  <div class="w-50">
+                  <div class="w-50 w-inc">
                     <b-form-group label="Email" label-for="email">
                       <b-form-input
                         id="email"
@@ -132,7 +132,7 @@
                     </b-form-group>
                   </div>
                   <!-- mobile no -->
-                  <div class="ml-4 w-50">
+                  <div class="ml-4 w-50 w-inc">
                     <b-form-group label="Mobile No" label-for="mobile">
                       <vue-tel-input
                         id="mobile"
@@ -182,8 +182,8 @@
 
               <!-- date -->
               <b-form-group>
-                <div class="d-flex w-50">
-                  <div class="w-50">
+                <div class="d-flex w-50 w-inc">
+                  <div class="w-50 w-inc">
                     <b-form-group
                       class
                       id="calendar"
@@ -203,8 +203,8 @@
                       ></date-picker>
                     </b-form-group>
                   </div>
-                  <div class="ml-4 w-50">
-                    <b-form-group label="age" label-for="age">
+                  <div class="ml-4 w-50 w-inc">
+                    <b-form-group label="Age" label-for="age">
                       <b-form-input
                         id="age"
                         type="text"
@@ -234,8 +234,8 @@
             </div>
             <div class="text-left main-form-section mx-5">
               <b-form-group>
-                <div class="d-flex">
-                  <div class="w-50">
+                <div class="d-flex company-width">
+                  <div class="w-50 w-inc">
                     <!-- Company Name -->
                     <b-form-group label="Name:" label-for="companyName">
                       <b-form-input
@@ -257,7 +257,7 @@
                       </div>
                     </b-form-group>
                   </div>
-                  <div class="w-50 ml-4">
+                  <div class="w-50 w-inc ml-4">
                     <!-- Type of Business -->
                     <b-form-group
                       label="Type of Business:"
@@ -285,8 +285,8 @@
                 </div>
               </b-form-group>
               <b-form-group>
-                <div class="d-flex">
-                  <div class="w-50">
+                <div class="d-flex company-width">
+                  <div class="w-50 w-inc">
                     <!-- Designation -->
                     <b-form-group label="Designation:" label-for="designation">
                       <b-form-input
@@ -308,7 +308,7 @@
                       </div>
                     </b-form-group>
                   </div>
-                  <div class="w-50 ml-4">
+                  <div class="w-50 w-inc ml-4">
                     <!-- Your Relationship -->
                     <b-form-group
                       label="Your Relationship:"
@@ -358,7 +358,7 @@
               <!-- Key Role -->
 
               <b-form-group label="Key Role:" label-for="role">
-                <div class="w-50">
+                <div class="w-50 w-inc">
                   <b-form-select
                     id="role"
                     v-model="form.keyRole"
@@ -380,8 +380,8 @@
               </b-form-group>
 
               <b-form-group>
-                <div class="d-flex">
-                  <div class="w-90">
+                <div class="d-flex other-details">
+                  <div class="w-90 w-inc">
                     <!-- Batting Style -->
                     <b-form-group label="Batting Style:" label-for="bat">
                       <b-form-select
@@ -403,7 +403,7 @@
                       </div>
                     </b-form-group>
                   </div>
-                  <div class="w-90 ml-4">
+                  <div class="w-90 ml-4 w-inc">
                     <!-- Bowling Style -->
                     <b-form-group label="Bowling Style:" label-for="bowl">
                       <b-form-select
@@ -425,7 +425,7 @@
                       </div>
                     </b-form-group>
                   </div>
-                  <div class="w-90 ml-4">
+                  <div class="w-90 ml-4 w-inc">
                     <!-- Wicket Keeper -->
                     <b-form-group label="Wicket Keeper:" label-for="wk">
                       <b-form-select
@@ -451,8 +451,8 @@
               </b-form-group>
 
               <b-form-group>
-                <div class="d-flex">
-                  <div class="w-50">
+                <div class="d-flex other-details">
+                  <div class="w-50 w-inc">
                     <!-- Played Last Year -->
                     <b-form-group label="Played Last Year:" label-for="played">
                       <b-form-select
@@ -474,7 +474,7 @@
                       </div>
                     </b-form-group>
                   </div>
-                  <div class="w-50 ml-4">
+                  <div class="w-50 w-inc ml-4">
                     <!-- Team -->
                     <b-form-group label="Team:" label-for="team">
                       <multiselect
@@ -483,7 +483,7 @@
                         placeholder="Search and Select a team"
                         label="name"
                         track-by="name"
-                        class="w-50"
+                        class="w-50 w-inc"
                         :options="teamOptions"
                       ></multiselect>
                       <div
@@ -523,8 +523,8 @@
               </b-form-group>
 
               <b-form-group>
-                <div class="d-flex">
-                  <div class="w-90">
+                <div class="d-flex other-details">
+                  <div class="w-90 w-inc">
                     <!-- Shirt Size -->
                     <b-form-group label="T-Shirt Size" label-for="shirt">
                       <b-form-select
@@ -546,7 +546,7 @@
                       </div>
                     </b-form-group>
                   </div>
-                  <div class="w-90 ml-4">
+                  <div class="w-90 ml-4 w-inc">
                     <!-- Trouser Size -->
                     <b-form-group label="Trouser Size" label-for="trouser">
                       <b-form-select
@@ -568,7 +568,7 @@
                       </div>
                     </b-form-group>
                   </div>
-                  <div class="w-90 ml-4">
+                  <div class="w-90 ml-4 w-inc">
                     <!-- Track Length -->
                     <b-form-group label="Track Length" label-for="track">
                       <b-form-select
@@ -594,8 +594,8 @@
               </b-form-group>
 
               <b-form-group>
-                <div class="d-flex w-50">
-                  <div class="w-50">
+                <div class="d-flex w-50 w-inc">
+                  <div class="w-50 w-inc">
                     <!-- Owner -->
                     <b-form-group label="Owner" label-for="owner">
                       <b-form-select
@@ -617,7 +617,7 @@
                       </div>
                     </b-form-group>
                   </div>
-                  <div class="w-50 ml-4">
+                  <div class="w-50 w-inc ml-4">
                     <!-- Sponsor -->
                     <b-form-group label="Sponsor" label-for="sponsor">
                       <b-form-select
@@ -1544,5 +1544,37 @@ export default {
   top: 50% !important;
   left: 50% !important;
   transform: translate(-32%, -38%);
+}
+
+@media only screen and (max-width: 992px) {
+  .multiselect.w-50.w-inc,
+  .w-50.w-inc,
+  .w-90.w-inc,
+  .d-flex.w-50.w-inc,
+  .multiselect.w-50.w-inc.multiselect--above {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tab-heading .text {
+    font-size: 1.45rem;
+  }
+  .ml-4.w-50.w-inc,
+  .w-90.ml-4.w-inc {
+    margin-left: 0 !important;
+  }
+  .multiselect.w-50.w-inc,
+  .w-50.w-inc,
+  .w-90.w-inc,
+  .d-flex.w-50.w-inc,
+  .multiselect.w-50.w-inc.multiselect--above {
+    width: 100% !important;
+  }
+  .d-flex.w-50.w-inc,
+  .d-flex.company-width,
+  .d-flex.other-details {
+    display: block !important;
+  }
 }
 </style>

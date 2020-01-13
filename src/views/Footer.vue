@@ -4,11 +4,17 @@
     <div class="container">
       <div class="row justify-content-center align-items-center mb-5" hidden>
         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <div class="text-uppercase subscribe-head">Subscribe to our newsletter</div>
+          <div class="text-uppercase subscribe-head">
+            Subscribe to our newsletter
+          </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-12">
           <div class>
-            <form name="subscriptionForm" role="form" ng-submit="saveSubscription(subscribe)">
+            <form
+              name="subscriptionForm"
+              role="form"
+              ng-submit="saveSubscription(subscribe)"
+            >
               <div class="input-group">
                 <input
                   type="email"
@@ -89,7 +95,9 @@
               <li class="list-inline-item right-section">
                 <ul class="list-unstyled text-left">
                   <li>
-                    <router-link to="/past-championship">Past Championship</router-link>
+                    <router-link to="/past-championship"
+                      >Past Championship</router-link
+                    >
                   </li>
                   <li>
                     <router-link to="/sponsor">Sponsor</router-link>
@@ -108,7 +116,10 @@
           <div class="footerMain text-center">
             <div class="footerLists">
               <!-- <i class="far fa-copyright"></i> -->
-              <font-awesome-icon :icon="['far', 'copyright']" class="mr-1" />2019 Copyright :
+              <font-awesome-icon
+                :icon="['far', 'copyright']"
+                class="mr-1"
+              />2020 Copyright :
               <router-link to="/">jypl.in</router-link>
               <!-- <span class="listSeparator">|</span> -->
             </div>

@@ -4,8 +4,13 @@
       <router-link class="navbar-brand p-0 pointer" to="/">
         <img src="../assets/jyf-logo.png" alt="jyf-logo" width="125" />
       </router-link>
-      <div class="text-center oswald-bold font-32">
-        JYPL SEASON 4
+      <div class="text-center site-head text-uppercase oswald-bold font-32">
+        <div>
+          Jewellers Youth Premier League SEASON 4
+        </div>
+        <div class="">
+          2020
+        </div>
       </div>
       <router-link class="navbar-brand p-0 pointer" to="/">
         <img src="../assets/jypl-logo.png" alt="jypl-logo" width="125" />
@@ -174,6 +179,9 @@ export default {
     padding: 33px 11px;
     font-size: 0.8rem;
   }
+  .text-center.site-head.text-uppercase.oswald-bold.font-32 {
+    font-size: 1.45rem;
+  }
   //Header End
 }
 @media only screen and (max-width: 768px) {
@@ -211,6 +219,10 @@ export default {
   header .navbar-light .navbar-nav .nav-item .nav-link {
     padding: 10px;
     text-align: center;
+  }
+  .text-center.site-head.text-uppercase.oswald-bold.font-32 {
+    font-size: 1.15rem;
+    margin: 10px 0;
   }
   //Header End
 }
