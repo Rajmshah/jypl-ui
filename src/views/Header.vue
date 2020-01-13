@@ -182,6 +182,11 @@ export default {
   .text-center.site-head.text-uppercase.oswald-bold.font-32 {
     font-size: 1.45rem;
   }
+  .navbar-brand {
+    img {
+      width: 100px;
+    }
+  }
   //Header End
 }
 @media only screen and (max-width: 768px) {
@@ -224,6 +229,34 @@ export default {
     font-size: 1.15rem;
     margin: 10px 0;
   }
+  .navbar-brand {
+    img {
+      width: 75px;
+    }
+  }
+
   //Header End
+}
+
+@media only screen and (max-width: 513px) {
+  .navbar-brand {
+    img {
+      width: 100px;
+    }
+  }
+  .text-center.site-head.text-uppercase.oswald-bold.font-32 {
+    font-size: 1.15rem;
+  }
+}
+
+@media only screen and (min-width: 514px) and (max-width: 630px) {
+  .navbar-brand {
+    img {
+      width: 50px;
+    }
+  }
+  .text-center.site-head.text-uppercase.oswald-bold.font-32 {
+    font-size: 1rem;
+  }
 }
 </style>
