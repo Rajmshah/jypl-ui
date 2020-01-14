@@ -113,7 +113,13 @@
       </div>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="footerMain text-center">
+          <div class="footerMain">
+            <div class="footerLists">
+              <div class="hidden-text">
+                Hidden Content
+              </div>
+              <!-- <router-link href="#">FAQs</router-link> -->
+            </div>
             <div class="footerLists">
               <!-- <i class="far fa-copyright"></i> -->
               <font-awesome-icon
@@ -122,6 +128,9 @@
               />2020 Copyright :
               <router-link to="/">jypl.in</router-link>
               <!-- <span class="listSeparator">|</span> -->
+            </div>
+            <div class="footerLists">
+              Powered By Wall-E Events
             </div>
             <!-- <div class="footerLists">
             <router-link href="#">FAQs</router-link>
@@ -144,6 +153,10 @@ export default {};
   // background-color: #234280;
   font-size: $font-size-sm;
   color: $black;
+}
+
+.hidden-text {
+  visibility: hidden;
 }
 
 .footer-css {
@@ -195,7 +208,7 @@ export default {};
 
 .footerMain {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .footerLists {
@@ -261,6 +274,15 @@ export default {};
     }
   }
 
+  .hidden-text {
+    display: none;
+  }
+  .footerMain {
+    justify-content: center;
+    .footerLists {
+      margin: 0 10px;
+    }
+  }
   .left-section {
     margin-right: 0 !important;
   }
@@ -275,5 +297,14 @@ export default {};
     float: right;
   }
   //Footer End
+}
+@media only screen and (max-width: 421px) {
+  .footerMain {
+    text-align: center;
+    display: block;
+    .footerLists {
+      margin: 5px 10px;
+    }
+  }
 }
 </style>
