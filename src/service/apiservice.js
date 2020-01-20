@@ -80,6 +80,15 @@ export default {
       .catch(err => {
         callback(err);
       }),
+  checkPlayerRegisteredOrNot: (data, callback) =>
+    axios
+      .get(`${adminUrl}Player/checkPlayerRegisteredOrNot`, { params: data })
+      .then(responseData => {
+        callback(responseData);
+      })
+      .catch(err => {
+        callback(err);
+      }),
   getPlayerCount: (data, callback) =>
     axios
       .get(`${adminUrl}Setting/`, { params: data })
