@@ -52,7 +52,7 @@
           </div>
         </b-form>
       </div>
-      <div class="column">
+      <div class="column"  v-if="!showMessage">
         <b-form name="form" @submit="onSubmit" @reset="onReset()" v-if="show">
           <!-- 1st section personmal detail -->
           <div class="card inception">
