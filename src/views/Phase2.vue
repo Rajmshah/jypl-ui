@@ -52,7 +52,7 @@
           </div>
         </b-form>
       </div>
-      <div class="column"  v-if="!showMessage">
+      <div class="column" v-if="!showMessage">
         <b-form name="form" @submit="onSubmit" @reset="onReset()" v-if="show">
           <!-- 1st section personmal detail -->
           <div class="card inception">
@@ -956,7 +956,8 @@ export default {
         trouserSize: "",
         trackLength: "",
         condition: [],
-        checked: []
+        checked: [],
+        specialRegistration: false
       },
 
       // date picker script
@@ -1199,7 +1200,8 @@ export default {
                 trouserSize: "",
                 trackLength: "",
                 condition: [],
-                checked: []
+                checked: [],
+                specialRegistration: false
               };
             }
           }
@@ -1267,13 +1269,15 @@ export default {
                   trouserSize: "",
                   trackLength: "",
                   condition: [],
-                  checked: []
+                  checked: [],
+                  specialRegistration: false
                 };
                 this.$toasted.success("Player is added successfully");
-                this.$bvModal._vm.$refs["paynow-button"].show("paynow");
-                setTimeout(() => {
-                  this.$router.go(0);
-                }, 15000);
+                this.$router.go(0);
+                // this.$bvModal._vm.$refs["paynow-button"].show("paynow");
+                // setTimeout(() => {
+                // this.$router.go(0);
+                // }, 15000);
               } else {
                 this.$toasted.error("Retry adding the player.");
               }
@@ -1328,6 +1332,7 @@ export default {
       this.form.paymentStatus = "Pending";
       this.form.paymentMethod = "Online";
       this.form.bowlingType = "";
+      this.form.specialRegistration = false;
 
       // Trick to reset/clear native browser form validation state
       this.show = true;

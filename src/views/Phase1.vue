@@ -954,7 +954,8 @@ export default {
         trouserSize: "",
         trackLength: "",
         condition: [],
-        checked: []
+        checked: [],
+        specialRegistration: false
       },
 
       // date picker script
@@ -1226,7 +1227,9 @@ export default {
                   trouserSize: "",
                   trackLength: "",
                   condition: [],
-                  checked: []
+                  checked: [],
+                  specialRegistration: false
+
                 };
                 this.$toasted.success("Player is added successfully");
                 this.$bvModal._vm.$refs["paynow-button"].show("paynow");
@@ -1274,6 +1277,7 @@ export default {
       this.form.company = {};
       this.form.condition = [];
       this.form.checked = [];
+      this.form.specialRegistration = false;
       this.form.keyRole = "";
       this.form.hasPlayed = false;
       this.form.team = "";

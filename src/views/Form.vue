@@ -15,15 +15,11 @@
             >
               {{ message }}
             </div> -->
-            <div
-              class="text-center main-form-section my-3 mx-5"
-            >
+            <div class="text-center main-form-section my-3 mx-5">
               In case you have played JYPL Season 3, please search and select
               your name here.
             </div>
-            <div
-              class="text-left main-form-section my-3 mx-5"
-            >
+            <div class="text-left main-form-section my-3 mx-5">
               <!-- Team -->
               <b-form-group label="Select Player:" label-for="player">
                 <multiselect
@@ -954,7 +950,8 @@ export default {
         trouserSize: "",
         trackLength: "",
         condition: [],
-        checked: []
+        checked: [],
+        specialRegistration: true
       },
 
       // date picker script
@@ -1197,7 +1194,8 @@ export default {
                 trouserSize: "",
                 trackLength: "",
                 condition: [],
-                checked: []
+                checked: [],
+                specialRegistration: true
               };
             }
           }
@@ -1265,13 +1263,15 @@ export default {
                   trouserSize: "",
                   trackLength: "",
                   condition: [],
-                  checked: []
+                  checked: [],
+                  specialRegistration: true
                 };
                 this.$toasted.success("Player is added successfully");
-                this.$bvModal._vm.$refs["paynow-button"].show("paynow");
-                setTimeout(() => {
-                  this.$router.go(0);
-                }, 15000);
+                this.$router.go(0);
+                // this.$bvModal._vm.$refs["paynow-button"].show("paynow");
+                // setTimeout(() => {
+                //   this.$router.go(0);
+                // }, 15000);
               } else {
                 this.$toasted.error("Retry adding the player.");
               }
@@ -1326,6 +1326,7 @@ export default {
       this.form.paymentStatus = "Pending";
       this.form.paymentMethod = "Online";
       this.form.bowlingType = "";
+      this.form.specialRegistration = true;
 
       // Trick to reset/clear native browser form validation state
       this.show = true;
