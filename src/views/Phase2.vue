@@ -650,7 +650,7 @@
           </div>
 
           <!-- 2nd section file upload -->
-          <div class="card inception">
+          <!-- <div class="card inception">
             <div class="tab-heading inception">
               <h3 class="text">Upload Documents</h3>
             </div>
@@ -734,7 +734,7 @@
                 </div>
               </b-form-group>
             </div>
-          </div>
+          </div> -->
 
           <!-- 6th section terms and condition -->
           <div class="card inception">
@@ -1215,82 +1215,85 @@ export default {
 
     onSubmit(e) {
       e.preventDefault();
-      if (this.form.photograph && this.form.idProof && this.form.businessCard) {
-        if (this.form.condition && this.form.condition.length == 1) {
-          var obj = _.cloneDeep(this.form);
-          if (obj.team) {
-            obj.team = obj.team.name;
-          }
-          obj.registrationDate = moment();
-          obj.mobile = parseInt(obj.mobile);
-          delete obj.condition;
-          this.removeText = true;
-          this.$v.form.$touch();
-          if (this.$v.form.$error) {
-            this.$toasted.error("All fields are mandatory except Team & Your Relationship with Company");
-            return;
-          } else {
-            service.savePlayer(obj, result => {
-              if (result.data == "Player Already Exist") {
-                this.$toasted.error("Player Already Exist");
-              } else if (result.data) {
-                this.removeText = false;
-                this.formShow = {
-                  selectedPlayer: ""
-                };
-                this.form = {
-                  firstName: "",
-                  middleName: "",
-                  surname: "",
-                  email: "",
-                  dob: "",
-                  age: "",
-                  mobile: "",
-                  photograph: "",
-                  idProof: "",
-                  businessCard: "",
-                  team: "",
-                  address: "",
-                  company: {
-                    name: "",
-                    businessType: "",
-                    designation: "",
-                    relationship: "",
-                    address: ""
-                  },
-                  jerseyName: "",
-                  keyRole: "",
-                  hasPlayed: false,
-                  bowlingType: "",
-                  battingType: "",
-                  isWicketkeeper: false,
-                  beOwner: false,
-                  beSponsor: false,
-                  shirtSize: "",
-                  trouserSize: "",
-                  trackLength: "",
-                  condition: [],
-                  checked: [],
-                  specialRegistration: false
-                };
-                this.$toasted.success("Player is added successfully");
-                // this.$router.go(0);
-                this.$router.push({ path: "/thank-you" });
-                // this.$bvModal._vm.$refs["paynow-button"].show("paynow");
-                // setTimeout(() => {
-                // this.$router.go(0);
-                // }, 15000);
-              } else {
-                this.$toasted.error("Retry adding the player.");
-              }
-            });
-          }
+      // if (this.form.photograph && this.form.idProof && this.form.businessCard) {
+      if (this.form.condition && this.form.condition.length == 1) {
+        var obj = _.cloneDeep(this.form);
+        if (obj.team) {
+          obj.team = obj.team.name;
+        }
+        obj.registrationDate = moment();
+        obj.mobile = parseInt(obj.mobile);
+        delete obj.condition;
+        this.removeText = true;
+        this.$v.form.$touch();
+        if (this.$v.form.$error) {
+          this.$toasted.error(
+            "All fields are mandatory except Team & Your Relationship with Company"
+          );
+          return;
         } else {
-          this.$toasted.error("Accept Terms and Conditions");
+          service.savePlayer(obj, result => {
+            if (result.data == "Player Already Exist") {
+              this.$toasted.error("Player Already Exist");
+            } else if (result.data) {
+              this.removeText = false;
+              this.formShow = {
+                selectedPlayer: ""
+              };
+              this.form = {
+                firstName: "",
+                middleName: "",
+                surname: "",
+                email: "",
+                dob: "",
+                age: "",
+                mobile: "",
+                photograph: "",
+                idProof: "",
+                businessCard: "",
+                team: "",
+                address: "",
+                company: {
+                  name: "",
+                  businessType: "",
+                  designation: "",
+                  relationship: "",
+                  address: ""
+                },
+                jerseyName: "",
+                keyRole: "",
+                hasPlayed: false,
+                bowlingType: "",
+                battingType: "",
+                isWicketkeeper: false,
+                beOwner: false,
+                beSponsor: false,
+                shirtSize: "",
+                trouserSize: "",
+                trackLength: "",
+                condition: [],
+                checked: [],
+                specialRegistration: false
+              };
+              this.$toasted.success("Player is added successfully");
+              // this.$router.go(0);
+              this.$router.push({ path: "/thank-you" });
+              // this.$bvModal._vm.$refs["paynow-button"].show("paynow");
+              // setTimeout(() => {
+              // this.$router.go(0);
+              // }, 15000);
+            } else {
+              this.$toasted.error("Retry adding the player.");
+            }
+          });
         }
       } else {
-        this.$toasted.error("All three images are mandatory");
+        this.$toasted.error("Accept Terms and Conditions");
       }
+      // }
+      //  else {
+      //   this.$toasted.error("All three images are mandatory");
+      // }
     },
 
     onReset() {
