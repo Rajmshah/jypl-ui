@@ -1080,6 +1080,8 @@ export default {
           if (setting.data[0].message) {
             this.showMessage = true;
             this.message = setting.data[0].message;
+            this.getPlayerList();
+            this.getTeamList();
           } else {
             this.showMessage = false;
             this.getPlayerList();
@@ -1221,6 +1223,7 @@ export default {
           this.removeText = true;
           this.$v.form.$touch();
           if (this.$v.form.$error) {
+             this.$toasted.error("All fields are mandatory except Team & Your Relationship with Company");
             return;
           } else {
             service.savePlayer(obj, result => {
@@ -1267,7 +1270,8 @@ export default {
                   specialRegistration: true
                 };
                 this.$toasted.success("Player is added successfully");
-                this.$router.go(0);
+                // this.$router.go(0);
+                   this.$router.push({ path: "/thank-you" });
                 // this.$bvModal._vm.$refs["paynow-button"].show("paynow");
                 // setTimeout(() => {
                 //   this.$router.go(0);

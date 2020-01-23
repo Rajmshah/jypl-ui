@@ -1227,6 +1227,7 @@ export default {
           this.removeText = true;
           this.$v.form.$touch();
           if (this.$v.form.$error) {
+            this.$toasted.error("All fields are mandatory except Team & Your Relationship with Company");
             return;
           } else {
             service.savePlayer(obj, result => {
@@ -1273,7 +1274,8 @@ export default {
                   specialRegistration: false
                 };
                 this.$toasted.success("Player is added successfully");
-                this.$router.go(0);
+                // this.$router.go(0);
+                this.$router.push({ path: "/thank-you" });
                 // this.$bvModal._vm.$refs["paynow-button"].show("paynow");
                 // setTimeout(() => {
                 // this.$router.go(0);
