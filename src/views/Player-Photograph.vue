@@ -7,7 +7,7 @@
         <div class="col-md-6">
           <div class="text-right mt-5 mb-3">
             <button class="btn btn-primary mr-3" v-on:click="redirectTo()">
-              Photograph
+              Attendance
             </button>
             <button class="btn btn-danger" v-on:click="logout()">Logout</button>
           </div>
@@ -18,7 +18,7 @@
           <!-- Search Player -->
           <div class="card inception">
             <div class="tab-heading inception main-head">
-              <h3 class="text">Player Attendance</h3>
+              <h3 class="text">Player Photograph</h3>
             </div>
             <div class="text-left main-form-section my-3 mx-5">
               <!-- Team -->
