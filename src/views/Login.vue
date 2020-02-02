@@ -109,7 +109,11 @@ export default {
       }
     }
   },
-  created() {},
+  created() {
+    if (localStorage.getItem("playerInfo")) {
+      this.$router.push("/player-attendance");
+    }
+  },
   methods: {
     login(formData) {
       const obj = {
