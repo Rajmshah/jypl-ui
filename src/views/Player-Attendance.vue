@@ -6,9 +6,9 @@
         <div class="col-md-6"></div>
         <div class="col-md-6">
           <div class="text-right mt-5 mb-3">
-            <!-- <button class="btn btn-primary mr-3" v-on:click="redirectTo()">
+            <button class="btn btn-primary mr-3" v-on:click="redirectTo()">
               Photograph
-            </button> -->
+            </button>
             <button class="btn btn-danger" v-on:click="logout()">Logout</button>
           </div>
         </div>
@@ -286,9 +286,9 @@ export default {
         this.getPlayerList();
       }
     },
-    customLabel({ fullName, team }) {
-      if (team) {
-        return `${fullName} – ${team}`;
+    customLabel({ fullName, playerId }) {
+      if (playerId) {
+        return `${playerId} – ${fullName}`;
       } else {
         return `${fullName}`;
       }
@@ -372,6 +372,7 @@ export default {
 
 *:focus {
   outline: 0;
+  box-shadow: none !important;
 }
 
 .card {
@@ -493,6 +494,7 @@ export default {
   .w-50.w-inc,
   .w-90.w-inc,
   .d-flex.w-50.w-inc,
+  .form-control.bg-color.w-75,
   .multiselect.w-50.w-inc.multiselect--above {
     width: 100% !important;
   }
@@ -510,6 +512,7 @@ export default {
   .w-50.w-inc,
   .w-90.w-inc,
   .d-flex.w-50.w-inc,
+  .form-control.bg-color.w-75,
   .multiselect.w-50.w-inc.multiselect--above {
     width: 100% !important;
   }
@@ -517,6 +520,23 @@ export default {
   .d-flex.company-width,
   .d-flex.other-details {
     display: block !important;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .form-control,
+  .custom-select,
+  .multiselect,
+  .multiselect__input,
+  .multiselect__single,
+  .btn {
+    font-size: 0.892rem !important;
+  }
+  label {
+    font-size: 1rem;
+  }
+  .tab-heading .text {
+    font-size: 1.25rem;
   }
 }
 </style>
