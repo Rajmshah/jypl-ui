@@ -14,8 +14,11 @@
                     class="img-fluid"
                   />
                 </div> -->
-                <div class="text-center mt-2 mb-4 text-uppercase font-size-lg">
+                <!-- <div class="text-center mt-2 mb-4 text-uppercase font-size-lg">
                   Login
+                </div> -->
+                <div class="tab-heading inception main-head">
+                  <h3 class="text">Login</h3>
                 </div>
                 <b-form-group
                   class="form-group floating-label-form-group controls"
@@ -53,7 +56,7 @@
                     password required
                   </div>
                 </b-form-group>
-                <div class="login-button my-4 text-center">
+                <div class="login-button mt-4 text-center">
                   <b-button
                     v-on:click="login(formData)"
                     variant="primary"
@@ -154,5 +157,8 @@ export default {
   width: 360px;
   margin: 0 auto;
   background: $white;
+  .card-body {
+    padding: 0 1.25rem 1.25rem;
+  }
 }
 </style>
