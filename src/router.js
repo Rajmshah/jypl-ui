@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Phase2.vue";
+// import Home from "./views/Phase2.vue";
+import Login from "./views/Login.vue";
+import Attendance from "./views/Player-Attendance.vue";
+import Photograph from "./views/Player-Photograph.vue";
 import Form from "./views/Form.vue";
 import ThankYou from "./views/ThankYou.vue";
 
@@ -12,8 +15,23 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "Home",
-      component: Home
+      name: "Login",
+      component: Login
+    },
+    // {
+    //   path: "/",
+    //   name: "Home",
+    //   component: Home
+    // },
+    {
+      path: "/player-attendance",
+      name: "Attendance",
+      component: Attendance
+    },
+    {
+      path: "/player-photograph",
+      name: "Photograph",
+      component: Photograph
     },
     {
       path: "/registration/form",

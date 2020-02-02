@@ -83,5 +83,14 @@ export default {
         default: "Some error occured."
       }
     }
-  ]
+  ],
+  setUser(data) {
+    localStorage.setItem("playerInfo", JSON.stringify(data));
+  },
+  removeUser() {
+    localStorage.removeItem("playerInfo");
+  },
+  getUser() {
+    return JSON.parse(localStorage.getItem("playerInfo"));
+  }
 };
