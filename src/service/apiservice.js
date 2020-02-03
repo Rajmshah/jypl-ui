@@ -241,6 +241,7 @@ export default {
       }),
   //Image Upload
   upload: function(formData, callback) {
+    console.log(formData);
     axios
       .post(this.uploadUrl, formData)
       .then(data => {

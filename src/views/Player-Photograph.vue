@@ -413,8 +413,10 @@ export default {
           });
           fileReader.readAsDataURL(files[0]);
           this.image = files[0];
+          console.log("image", files[0]);
           var formData = new FormData();
           formData.append("file", this.image);
+          console.log(formData);
           service.upload(formData, data => {
             if (data.data.data) {
               this.$toasted.success("Profile Image Uploaded Successfully");
