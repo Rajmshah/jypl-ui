@@ -402,9 +402,11 @@ export default {
         var filename = files[0].name;
         if (filename.lastIndexOf(".") <= 0) {
           this.$toasted.error("Please Add Valid File!");
-        } else if (files[0].size > 1024 * 1024) {
-          this.$toasted.error("Image size is greater than 1 MB");
-        } else {
+        }
+        // else if (files[0].size > 1024 * 1024) {
+        //   this.$toasted.error("Image size is greater than 1 MB");
+        // }
+        else {
           var fileReader = new FileReader();
           fileReader.addEventListener("load", () => {
             this.imageUrl = fileReader.result;
