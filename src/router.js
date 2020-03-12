@@ -6,6 +6,7 @@ import Attendance from "./views/Player-Attendance.vue";
 import Photograph from "./views/Player-Photograph.vue";
 import Form from "./views/Form.vue";
 import ThankYou from "./views/ThankYou.vue";
+import CoupleForm from "./views/Couple-Form.vue";
 
 Vue.use(Router);
 
@@ -37,6 +38,11 @@ export default new Router({
       path: "/registration/form",
       name: "Form",
       component: Form
+    },
+    {
+      path: "/couple-form",
+      name: "CoupleForm",
+      component: CoupleForm
     },
     {
       path: "/thank-you",
